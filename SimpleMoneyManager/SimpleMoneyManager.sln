@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SimpleMoneyManager.Domain", "SimpleMoneyManager.Domain\SimpleMoneyManager.Domain.vbproj", "{C680BB15-8676-4ED4-BA45-8A8B2A5C9756}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{FD335ED4-0243-48C9-B571-0F468D204053}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SimpleMoneyManager.Domain.Tests", "SimpleMoneyManager.Domain.Tests\SimpleMoneyManager.Domain.Tests.vbproj", "{70A24B90-47CE-4A3B-A7B3-256005B1B7D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{C680BB15-8676-4ED4-BA45-8A8B2A5C9756}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C680BB15-8676-4ED4-BA45-8A8B2A5C9756}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C680BB15-8676-4ED4-BA45-8A8B2A5C9756}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70A24B90-47CE-4A3B-A7B3-256005B1B7D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70A24B90-47CE-4A3B-A7B3-256005B1B7D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70A24B90-47CE-4A3B-A7B3-256005B1B7D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70A24B90-47CE-4A3B-A7B3-256005B1B7D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{70A24B90-47CE-4A3B-A7B3-256005B1B7D3} = {FD335ED4-0243-48C9-B571-0F468D204053}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6F098971-C271-4E37-A419-3E06596D2FBF}
