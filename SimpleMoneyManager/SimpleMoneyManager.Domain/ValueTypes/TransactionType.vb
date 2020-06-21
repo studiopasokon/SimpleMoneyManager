@@ -3,17 +3,21 @@ Option Explicit On
 Option Infer On
 Option Strict On
 
-''' <summary>
-''' Enumeration of all possible transaction (or transfer) types.
-''' </summary>
-Public Enum TransactionType
-    ''' <summary>
-    ''' Paying money.
-    ''' </summary>
-    Payment
+Namespace SimpleMoneyManager.Domain
 
     ''' <summary>
-    ''' Receiving money.
+    ''' Enumeration of all possible transaction (or transfer) types.
     ''' </summary>
-    Receipt
-End Enum
+    Public Enum TransactionType
+        ''' <summary>
+        ''' Paying money.
+        ''' </summary>
+        Payment
+
+        ''' <summary>
+        ''' Receiving money.
+        ''' </summary>
+        Receipt
+    End Enum
+
+End Namespace
