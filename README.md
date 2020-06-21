@@ -24,6 +24,7 @@ There are no screenshots available yet. The first screens must still be designed
 
 * .NET Framework 4.8
 * VB.Net
+* MS Test v2
 
 The choice of technology comes down to 2 reasons: the first, the person for which the application is written, uses Windows.
 And secondly, the choice for VB.Net is basically to use the development as a kind of an intellectual exercise to see whether the language is really that bad as many claim.
