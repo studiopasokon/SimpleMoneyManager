@@ -26,9 +26,9 @@ Namespace SimpleMoneyManager.Domain
         Public Overloads Function Equals(other As FinancialYear) As Boolean Implements IEquatable(Of FinancialYear).Equals
             If other Is Nothing Then Return False
 
-            If Transactions.Count <> other.Transactions.Count Then
+            If Transactions?.Count <> other.Transactions?.Count Then
                 Return False
-            ElseIf Not Transactions.All(Function(ByVal tr) other.Transactions.Contains(tr)) Then
+            ElseIf Not Transactions?.All(Function(ByVal tr) CBool(other.Transactions?.Contains(tr))) Then
                 Return False
             Else
                 Return True
