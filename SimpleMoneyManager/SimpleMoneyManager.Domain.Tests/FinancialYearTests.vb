@@ -217,7 +217,387 @@ Namespace SimpleMoneyManager.Domain.Tests
 
 #End Region
 
-        ' TODO: add tests for operator = and <>.
+#Region "Operator = tests"
+
+        <TestMethod()> Public Sub EmptyFinancialYears_Operator_ShouldBeEqual_WhenSameObjects()
+            ' Arrange.
+            Dim financialYear As New FinancialYear()
+            With financialYear
+                .Transactions = Nothing
+            End With
+
+            ' Act.
+            Dim equalResult = financialYear = financialYear
+
+            ' Assert.
+            Assert.IsTrue(equalResult)
+        End Sub
+
+        <TestMethod()> Public Sub EmptyFinancialYears_Operator_ShouldBeEqual_WhenSimilarObjects()
+            ' Arrange.
+            Dim financialYear1 As New FinancialYear()
+            With financialYear1
+                .Transactions = Nothing
+            End With
+
+            Dim financialYear2 As New FinancialYear()
+            With financialYear2
+                .Transactions = Nothing
+            End With
+
+            ' Act.
+            Dim equalResult = financialYear1 = financialYear2
+
+            ' Assert.
+            Assert.IsTrue(equalResult)
+        End Sub
+
+        <TestMethod()> Public Sub EmptyFinancialYears_Operator_ShouldNotBeEqual_WhenOneObjectIsNothing()
+            ' Arrange.
+            Dim financialYear As New FinancialYear()
+            With financialYear
+                .Transactions = Nothing
+            End With
+
+            ' Act.
+            Dim equalResult = financialYear = Nothing
+
+            ' Assert.
+            Assert.IsFalse(equalResult)
+        End Sub
+
+        <TestMethod()> Public Sub FinancialYearsWithEmptyTransactionList_Operator_ShouldBeEqual_WhenSameObjects()
+            ' Arrange.
+            Dim financialYear As New FinancialYear()
+            With financialYear
+                .Transactions = New List(Of Transaction)
+            End With
+
+            ' Act.
+            Dim equalResult = financialYear = financialYear
+
+            ' Assert.
+            Assert.IsTrue(equalResult)
+        End Sub
+
+        <TestMethod()> Public Sub FinancialYearsWithEmptyTransactionList_Operator_ShouldBeEqual_WhenSimilarObjects()
+            ' Arrange.
+            Dim financialYear1 As New FinancialYear()
+            With financialYear1
+                .Transactions = New List(Of Transaction)
+            End With
+
+            Dim financialYear2 As New FinancialYear()
+            With financialYear2
+                .Transactions = New List(Of Transaction)
+            End With
+
+            ' Act.
+            Dim equalResult = financialYear1 = financialYear2
+
+            ' Assert.
+            Assert.IsTrue(equalResult)
+        End Sub
+
+        <TestMethod()> Public Sub FinancialYearsWithUsedTransactionList_Operator_ShouldBeEqual_WhenSameObjects()
+            ' Arrange.
+            Dim transaction As New Transaction()
+            With transaction
+                .Amount = 100
+                .Description = "Test transaction"
+                .TransactionDate = Date.Now
+                .TransferType = TransactionType.Receipt
+            End With
+
+            Dim financialYear As New FinancialYear()
+            With financialYear
+                .Transactions = New List(Of Transaction)
+                With .Transactions
+                    .Add(transaction)
+                End With
+            End With
+
+            ' Act.
+            Dim equalResult = financialYear = financialYear
+
+            ' Assert.
+            Assert.IsTrue(equalResult)
+        End Sub
+
+        <TestMethod()> Public Sub FinancialYearsWithUsedTransactionList_Operator_ShouldBeEqual_WhenSimilarObjects()
+            ' Arrange.
+            Dim transaction1 As New Transaction()
+            With transaction1
+                .Amount = 100
+                .Description = "Test transaction"
+                .TransactionDate = Date.Now
+                .TransferType = TransactionType.Receipt
+            End With
+
+            Dim financialYear1 As New FinancialYear()
+            With financialYear1
+                .Transactions = New List(Of Transaction)
+                With .Transactions
+                    .Add(transaction1)
+                End With
+            End With
+
+            Dim transaction2 As New Transaction()
+            With transaction2
+                .Amount = 100
+                .Description = "Test transaction"
+                .TransactionDate = Date.Now
+                .TransferType = TransactionType.Receipt
+            End With
+
+            Dim financialYear2 As New FinancialYear()
+            With financialYear2
+                .Transactions = New List(Of Transaction)
+                With .Transactions
+                    .Add(transaction2)
+                End With
+            End With
+
+            ' Act.
+            Dim equalResult = financialYear1 = financialYear2
+
+            ' Assert.
+            Assert.IsTrue(equalResult)
+        End Sub
+
+        <TestMethod()> Public Sub FinancialYearsWithUsedTransactionList_Operator_ShouldNotBeEqual_WhenObjectsAreDifferent()
+            ' Arrange.
+            Dim transaction1 As New Transaction()
+            With transaction1
+                .Amount = 100
+                .Description = "Test transaction"
+                .TransactionDate = Date.Now
+                .TransferType = TransactionType.Receipt
+            End With
+
+            Dim financialYear1 As New FinancialYear()
+            With financialYear1
+                .Transactions = New List(Of Transaction)
+                With .Transactions
+                    .Add(transaction1)
+                End With
+            End With
+
+            Dim transaction2 As New Transaction()
+            With transaction2
+                .Amount = 500
+                .Description = "Another transaction"
+                .TransactionDate = Date.Now
+                .TransferType = TransactionType.Payment
+            End With
+
+            Dim financialYear2 As New FinancialYear()
+            With financialYear2
+                .Transactions = New List(Of Transaction)
+                With .Transactions
+                    .Add(transaction2)
+                End With
+            End With
+
+            ' Act.
+            Dim equalResult = financialYear1 = financialYear2
+
+            ' Assert.
+            Assert.IsFalse(equalResult)
+        End Sub
+
+#End Region
+
+#Region "Operator <> tests"
+
+        <TestMethod()> Public Sub EmptyFinancialYears_Operator_ShouldNotBeDifferent_WhenSameObjects()
+            ' Arrange.
+            Dim financialYear As New FinancialYear()
+            With financialYear
+                .Transactions = Nothing
+            End With
+
+            ' Act.
+            Dim equalResult = financialYear <> financialYear
+
+            ' Assert.
+            Assert.IsFalse(equalResult)
+        End Sub
+
+        <TestMethod()> Public Sub EmptyFinancialYears_Operator_ShouldNotBeDifferent_WhenSimilarObjects()
+            ' Arrange.
+            Dim financialYear1 As New FinancialYear()
+            With financialYear1
+                .Transactions = Nothing
+            End With
+
+            Dim financialYear2 As New FinancialYear()
+            With financialYear2
+                .Transactions = Nothing
+            End With
+
+            ' Act.
+            Dim equalResult = financialYear1 <> financialYear2
+
+            ' Assert.
+            Assert.IsFalse(equalResult)
+        End Sub
+
+        <TestMethod()> Public Sub EmptyFinancialYears_Operator_ShouldBeDifferent_WhenOneObjectIsNothing()
+            ' Arrange.
+            Dim financialYear As New FinancialYear()
+            With financialYear
+                .Transactions = Nothing
+            End With
+
+            ' Act.
+            Dim equalResult = financialYear <> Nothing
+
+            ' Assert.
+            Assert.IsTrue(equalResult)
+        End Sub
+
+        <TestMethod()> Public Sub FinancialYearsWithEmptyTransactionList_Operator_ShouldNotBeDifferent_WhenSameObjects()
+            ' Arrange.
+            Dim financialYear As New FinancialYear()
+            With financialYear
+                .Transactions = New List(Of Transaction)
+            End With
+
+            ' Act.
+            Dim equalResult = financialYear <> financialYear
+
+            ' Assert.
+            Assert.IsFalse(equalResult)
+        End Sub
+
+        <TestMethod()> Public Sub FinancialYearsWithEmptyTransactionList_Operator_ShouldNotBeDifferent_WhenSimilarObjects()
+            ' Arrange.
+            Dim financialYear1 As New FinancialYear()
+            With financialYear1
+                .Transactions = New List(Of Transaction)
+            End With
+
+            Dim financialYear2 As New FinancialYear()
+            With financialYear2
+                .Transactions = New List(Of Transaction)
+            End With
+
+            ' Act.
+            Dim equalResult = financialYear1 <> financialYear2
+
+            ' Assert.
+            Assert.IsFalse(equalResult)
+        End Sub
+
+        <TestMethod()> Public Sub FinancialYearsWithUsedTransactionList_Operator_ShouldNotBeDifferent_WhenSameObjects()
+            ' Arrange.
+            Dim transaction As New Transaction()
+            With transaction
+                .Amount = 100
+                .Description = "Test transaction"
+                .TransactionDate = Date.Now
+                .TransferType = TransactionType.Receipt
+            End With
+
+            Dim financialYear As New FinancialYear()
+            With financialYear
+                .Transactions = New List(Of Transaction)
+                With .Transactions
+                    .Add(transaction)
+                End With
+            End With
+
+            ' Act.
+            Dim equalResult = financialYear <> financialYear
+
+            ' Assert.
+            Assert.IsFalse(equalResult)
+        End Sub
+
+        <TestMethod()> Public Sub FinancialYearsWithUsedTransactionList_Operator_ShouldNotBeDifferent_WhenSimilarObjects()
+            ' Arrange.
+            Dim transaction1 As New Transaction()
+            With transaction1
+                .Amount = 100
+                .Description = "Test transaction"
+                .TransactionDate = Date.Now
+                .TransferType = TransactionType.Receipt
+            End With
+
+            Dim financialYear1 As New FinancialYear()
+            With financialYear1
+                .Transactions = New List(Of Transaction)
+                With .Transactions
+                    .Add(transaction1)
+                End With
+            End With
+
+            Dim transaction2 As New Transaction()
+            With transaction2
+                .Amount = 100
+                .Description = "Test transaction"
+                .TransactionDate = Date.Now
+                .TransferType = TransactionType.Receipt
+            End With
+
+            Dim financialYear2 As New FinancialYear()
+            With financialYear2
+                .Transactions = New List(Of Transaction)
+                With .Transactions
+                    .Add(transaction2)
+                End With
+            End With
+
+            ' Act.
+            Dim equalResult = financialYear1 <> financialYear2
+
+            ' Assert.
+            Assert.IsFalse(equalResult)
+        End Sub
+
+        <TestMethod()> Public Sub FinancialYearsWithUsedTransactionList_Operator_ShouldBeDifferent_WhenObjectsAreDifferent()
+            ' Arrange.
+            Dim transaction1 As New Transaction()
+            With transaction1
+                .Amount = 100
+                .Description = "Test transaction"
+                .TransactionDate = Date.Now
+                .TransferType = TransactionType.Receipt
+            End With
+
+            Dim financialYear1 As New FinancialYear()
+            With financialYear1
+                .Transactions = New List(Of Transaction)
+                With .Transactions
+                    .Add(transaction1)
+                End With
+            End With
+
+            Dim transaction2 As New Transaction()
+            With transaction2
+                .Amount = 500
+                .Description = "Another transaction"
+                .TransactionDate = Date.Now
+                .TransferType = TransactionType.Payment
+            End With
+
+            Dim financialYear2 As New FinancialYear()
+            With financialYear2
+                .Transactions = New List(Of Transaction)
+                With .Transactions
+                    .Add(transaction2)
+                End With
+            End With
+
+            ' Act.
+            Dim equalResult = financialYear1 <> financialYear2
+
+            ' Assert.
+            Assert.IsTrue(equalResult)
+        End Sub
+
+#End Region
 
     End Class
 
