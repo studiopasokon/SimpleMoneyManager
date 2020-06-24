@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Entities\FinancialYear.vb" />
     <Compile Include="Entities\Transaction.vb" />
+    <Compile Include="Interfaces\IRepository.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -102,5 +103,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
