@@ -3,7 +3,7 @@ Option Explicit On
 Option Infer On
 Option Strict On
 
-Namespace SimpleMoneyManager.Domain
+Namespace ValueTypes
 
     ''' <summary>
     ''' Enumeration of all possible transaction (or transfer) types.

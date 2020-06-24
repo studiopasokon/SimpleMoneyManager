@@ -3,7 +3,9 @@ Option Explicit On
 Option Infer On
 Option Strict On
 
-Namespace SimpleMoneyManager.Domain
+Imports SimpleMoneyManager.Domain.ValueTypes
+
+Namespace Entities
 
     ''' <summary>
     ''' Entity class describing a single transaction, either a payment or a receipt of money.

@@ -3,7 +3,7 @@ Option Explicit On
 Option Infer On
 Option Strict On
 
-Namespace SimpleMoneyManager.Domain.Interfaces
+Namespace Interfaces
 
     ''' <summary>
     ''' Interface class defining the access to the data repository of the application.

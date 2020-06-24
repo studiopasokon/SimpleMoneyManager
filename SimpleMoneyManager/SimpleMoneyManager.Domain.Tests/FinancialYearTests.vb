@@ -3,9 +3,10 @@ Option Explicit On
 Option Infer On
 Option Strict On
 
-Imports SimpleMoneyManager.Domain.SimpleMoneyManager.Domain
+Imports SimpleMoneyManager.Domain.Entities
+Imports SimpleMoneyManager.Domain.ValueTypes
 
-Namespace SimpleMoneyManager.Domain.Tests
+Namespace EntityTests
 
     ''' <summary>
     ''' Test class that checks the internals of the <see cref="FinancialYear"/> entity.
