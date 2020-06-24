@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{FD335ED4
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SimpleMoneyManager.Domain.Tests", "SimpleMoneyManager.Domain.Tests\SimpleMoneyManager.Domain.Tests.vbproj", "{70A24B90-47CE-4A3B-A7B3-256005B1B7D3}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SimpleMoneyManager.Infrastructure", "SimpleMoneyManager.Infrastructure\SimpleMoneyManager.Infrastructure.vbproj", "{38952514-0E3D-430A-9659-DDC1312F0A63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{70A24B90-47CE-4A3B-A7B3-256005B1B7D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70A24B90-47CE-4A3B-A7B3-256005B1B7D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70A24B90-47CE-4A3B-A7B3-256005B1B7D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38952514-0E3D-430A-9659-DDC1312F0A63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38952514-0E3D-430A-9659-DDC1312F0A63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38952514-0E3D-430A-9659-DDC1312F0A63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38952514-0E3D-430A-9659-DDC1312F0A63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
