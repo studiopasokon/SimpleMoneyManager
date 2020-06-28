@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Entities\FinancialYear.vb" />
     <Compile Include="Entities\Transaction.vb" />
+    <Compile Include="Interfaces\IDataContext.vb" />
     <Compile Include="Interfaces\IRepository.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
