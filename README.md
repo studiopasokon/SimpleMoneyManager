@@ -25,9 +25,12 @@ There are no screenshots available yet. The first screens must still be designed
 * .NET Framework 4.8
 * VB.Net
 * MS Test v2
+* Windows Forms
 
 The choice of technology comes down to 2 reasons: the first, the person for which the application is written, uses Windows.
 And secondly, the choice for VB.Net is basically to use the development as a kind of an intellectual exercise to see whether the language is really that bad as many claim.
+
+Windows Forms might be a strange decision to make regarding GUI technology. However, Forms is a very easy and simple way to start creating the application screens. Later on when more progress is made on the development of the application, most likely a switch will be made to a different GUI technology, probably something WPF based.
 
 ## Setup
 Install instructions will be added here when the application development is progressed a little bit further.
