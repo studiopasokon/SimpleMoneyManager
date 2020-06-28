@@ -6,9 +6,9 @@ Option Strict On
 Namespace Interfaces
 
     ''' <summary>
-    ''' Interface class defining the access to the data repository of the application.
+    ''' Interface class defining the access to the data repository.
     ''' </summary>
-    Public Interface IRepository
+    Public Interface IRepository(Of TEntity)
 
     End Interface
 
