@@ -3,7 +3,6 @@ Option Explicit On
 Option Infer On
 Option Strict On
 
-Imports SimpleMoneyManager.Domain.Entities
 Imports SimpleMoneyManager.Domain.Interfaces
 
 Namespace DataContext
