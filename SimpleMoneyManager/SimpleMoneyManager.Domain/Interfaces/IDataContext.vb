@@ -12,22 +12,6 @@ Namespace Interfaces
     ''' </summary>
     Public Interface IDataContext
 
-#Region "Repositories"
-
-        ''' <summary>
-        ''' Property referring to the <see cref="FinancialYear"/> repository data set.
-        ''' </summary>
-        ''' <returns>An active financial year repository.</returns>
-        Property FinancialYearDataSet As IRepository(Of FinancialYear)
-
-        ''' <summary>
-        ''' Property referring to the <see cref="Transaction"/> repository data set.
-        ''' </summary>
-        ''' <returns>An active transaction repository.</returns>
-        Property TransactionDataSet As IRepository(Of Transaction)
-
-#End Region
-
 #Region "Procedures"
 
         ''' <summary>

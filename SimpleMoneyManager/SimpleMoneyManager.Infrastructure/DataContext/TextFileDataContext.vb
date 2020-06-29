@@ -26,11 +26,11 @@ Namespace DataContext
 
 #Region "Properties"
 
-        ''' <inheritdoc />
-        Public Property FinancialYearDataSet As IRepository(Of FinancialYear) Implements IDataContext.FinancialYearDataSet
-
-        ''' <inheritdoc />
-        Public Property TransactionDataSet As IRepository(Of Transaction) Implements IDataContext.TransactionDataSet
+        ''' <summary>
+        ''' Contains all loaded financial data.
+        ''' </summary>
+        ''' <returns>A list containing all loaded financial data.</returns>
+        Friend Property FinancialYearDataSet As List(Of String)
 
 #End Region
 
