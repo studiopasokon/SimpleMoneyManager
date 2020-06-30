@@ -18,7 +18,8 @@ Namespace DataContext
         ''' Data context construction.
         ''' </summary>
         Public Sub TextFileDataContext()
-            ' TODO: instantiate the different repositories.
+            ' TODO: set up the data context.
+            Throw New NotImplementedException()
         End Sub
 
 #End Region
