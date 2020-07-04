@@ -115,6 +115,12 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleMoneyManager.Infrastructure\SimpleMoneyManager.Infrastructure.vbproj">
+      <Project>{38952514-0e3d-430a-9659-ddc1312f0a63}</Project>
+      <Name>SimpleMoneyManager.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

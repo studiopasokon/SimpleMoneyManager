@@ -29,14 +29,23 @@ Namespace DataContext
     ''' </summary>
     Public Class TextFileDataContext : Implements IDataContext
 
+#Region "Fields"
+
+        ''' <summary>
+        ''' Contains path where all data files are stored.
+        ''' </summary>
+        Private _dataPath As String
+
+#End Region
+
 #Region "Construction"
 
         ''' <summary>
         ''' Data context construction.
         ''' </summary>
-        Public Sub TextFileDataContext()
-            ' TODO: set up the data context.
-            Throw New NotImplementedException()
+        ''' <param name="dataPath">Path where the data files can be found.</param>
+        Public Sub New(dataPath As String)
+            _dataPath = dataPath
         End Sub
 
 #End Region
