@@ -13,6 +13,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SimpleMoneyManager.Infrastr
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SimpleMoneyManager.WinForms", "SimpleMoneyManager.WinForms\SimpleMoneyManager.WinForms.vbproj", "{9D57B01D-CD2E-4132-B316-0D5E8A259EC8}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SimpleMoneyManager.Infrastructure.Tests", "SimpleMoneyManager.Infrastructure.Tests\SimpleMoneyManager.Infrastructure.Tests.vbproj", "{68F4059F-D8A4-4190-921A-17DBADA241EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,12 +37,17 @@ Global
 		{9D57B01D-CD2E-4132-B316-0D5E8A259EC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D57B01D-CD2E-4132-B316-0D5E8A259EC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D57B01D-CD2E-4132-B316-0D5E8A259EC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68F4059F-D8A4-4190-921A-17DBADA241EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68F4059F-D8A4-4190-921A-17DBADA241EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68F4059F-D8A4-4190-921A-17DBADA241EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68F4059F-D8A4-4190-921A-17DBADA241EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{70A24B90-47CE-4A3B-A7B3-256005B1B7D3} = {FD335ED4-0243-48C9-B571-0F468D204053}
+		{68F4059F-D8A4-4190-921A-17DBADA241EC} = {FD335ED4-0243-48C9-B571-0F468D204053}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6F098971-C271-4E37-A419-3E06596D2FBF}
