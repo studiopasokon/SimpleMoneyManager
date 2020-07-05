@@ -20,6 +20,7 @@ Option Explicit On
 Option Infer On
 Option Strict On
 
+Imports System.IO
 Imports SimpleMoneyManager.Domain.Interfaces
 
 Namespace DataContext
@@ -28,6 +29,12 @@ Namespace DataContext
     ''' Data context implementation on top of text files.
     ''' </summary>
     Public Class TextFileDataContext : Implements IDataContext
+
+#Region "Constants"
+
+        Public Const DataFileName As String = "SimpleMoneyManager.dat"
+
+#End Region
 
 #Region "Fields"
 
@@ -44,8 +51,21 @@ Namespace DataContext
         ''' Data context construction.
         ''' </summary>
         ''' <param name="dataPath">Path where the data files can be found.</param>
+        ''' <exception cref="ArgumentNullException">When <paramref name="dataPath"/> is nothing, empty or whitespace.</exception>
+        ''' <exception cref="DirectoryNotFoundException">When <paramref name="dataPath"/> does not exist on disk.</exception>
         Public Sub New(dataPath As String)
+            ' Parameter sanity check.
+            If String.IsNullOrWhiteSpace(dataPath) Then
+                Throw New ArgumentNullException(NameOf(dataPath), "Data file storage path is mandatory")
+            End If
+
+            ' Checking for the existance of the path.
+            If Not Directory.Exists(dataPath) Then
+                Throw New DirectoryNotFoundException($"Data file path not found: {dataPath}")
+            End If
+
             _dataPath = dataPath
+            FinancialYearDataSet = New List(Of String)
         End Sub
 
 #End Region
@@ -64,8 +84,11 @@ Namespace DataContext
 
         ''' <inheritdoc />
         Public Sub Connect() Implements IDataContext.Connect
-            ' TODO: implement loading the data files.
-            Throw New NotImplementedException()
+            ' Check whether the data file exists in the path.
+            Dim fullPath As String = Path.Combine(_dataPath, DataFileName)
+            If File.Exists(fullPath) Then
+                ' TODO: open the file and load the data.
+            End If
         End Sub
 
         ''' <inheritdoc />
