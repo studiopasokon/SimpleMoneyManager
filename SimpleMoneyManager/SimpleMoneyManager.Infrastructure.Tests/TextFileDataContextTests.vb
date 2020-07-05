@@ -28,12 +28,20 @@ Imports SimpleMoneyManager.Infrastructure.DataContext
 ''' </summary>
 <TestClass()> Public Class TextFileDataContextTests
 
+    Private _localPath As String
+    Private _localDataFile As String
+
+    <TestInitialize> Public Sub TestInit()
+        _localPath = Directory.GetCurrentDirectory()
+        _localDataFile = Path.Combine(_localPath, TextFileDataContext.DataFileName)
+    End Sub
+
 #Region "Constructor Tests"
 
     <DataTestMethod()>
     <DataRow(Nothing)>
     <DataRow("")>
-    Public Sub LoadDataFile_ShouldThrowException_WhenEmptyDataPath(path As String)
+    Public Sub Instantiate_ShouldThrowException_WhenEmptyDataPath(path As String)
         ' Arrange / Act.
         Dim instantiate As Action = Sub()
                                         Dim dataContext As New TextFileDataContext(path)
@@ -43,7 +51,7 @@ Imports SimpleMoneyManager.Infrastructure.DataContext
         Assert.ThrowsException(Of ArgumentNullException)(instantiate)
     End Sub
 
-    <TestMethod> Public Sub LoadDataFile_ShouldThrowException_WhenNonExistingDataPath()
+    <TestMethod> Public Sub Instantiate_ShouldThrowException_WhenNonExistingDataPath()
         ' Arrange.
         Const nonExistingPath As String = "c:\nonexisting"
 
@@ -58,56 +66,74 @@ Imports SimpleMoneyManager.Infrastructure.DataContext
 
 #End Region
 
+#Region "Connect Tests"
+
     <TestMethod()> Public Sub LoadDataFile_ShouldGiveEmptyDataSet_WhenNoDataFile()
-        ' TODO: code test.
         ' Arrange.
-        'Dim dataContext As New TextFileDataContext(path)
+        Dim dataContext As New TextFileDataContext(_localPath)
 
         ' Act.
-        'DataContext.Connect()
+        dataContext.Connect()
 
         ' Assert.
-        'Assert.IsNotNull(dataContext.FinancialYearDataSet)
-        'Assert.AreEqual(0, dataContext.FinancialYearDataSet.Count)
-        Assert.Fail()
+        Assert.IsNotNull(dataContext.FinancialYearDataSet)
+        Assert.AreEqual(0, dataContext.FinancialYearDataSet.Count)
     End Sub
 
     <TestMethod()> Public Sub LoadDataFile_ShouldGiveEmptyDataSet_WhenEmptyFile()
-        ' TODO: code test.
         ' Arrange.
-        'Dim dataContext As New TextFileDataContext(path)
+        File.Create(_localDataFile).Dispose()
+        Dim dataContext As New TextFileDataContext(_localPath)
 
         ' Act.
-        'DataContext.Connect()
+        dataContext.Connect()
 
         ' Assert.
-        'Assert.IsNotNull(dataContext.FinancialYearDataSet)
-        'Assert.AreEqual(0, dataContext.FinancialYearDataSet.Count)
-        Assert.Fail()
+        Assert.IsNotNull(dataContext.FinancialYearDataSet)
+        Assert.AreEqual(0, dataContext.FinancialYearDataSet.Count)
     End Sub
 
     <TestMethod()> Public Sub LoadDataFile_ShouldThrowException_WhenIncorrectHeader()
-        ' TODO: code test.
         ' Arrange.
+        ' TODO: add writing some faulty data to the file.
+        File.Create(_localDataFile).Dispose()
+        Dim dataContext As New TextFileDataContext(_localPath)
+
         ' Act.
+        Dim instantiate As Action = Sub() dataContext.Connect()
+
         ' Assert.
-        Assert.Fail()
+        ' TODO: catch proper exception.
+        Assert.ThrowsException(Of Exception)(instantiate)
     End Sub
 
     <TestMethod()> Public Sub LoadDataFile_ShouldThrowException_WhenIncorrectTransactions()
-        ' TODO: code test.
         ' Arrange.
+        ' TODO: add writing some faulty data to the file.
+        File.Create(_localDataFile).Dispose()
+        Dim dataContext As New TextFileDataContext(_localPath)
+
         ' Act.
+        Dim instantiate As Action = Sub() dataContext.Connect()
+
         ' Assert.
-        Assert.Fail()
+        ' TODO: catch proper exception.
+        Assert.ThrowsException(Of Exception)(instantiate)
     End Sub
 
     <TestMethod()> Public Sub LoadDataFile_ShouldCreateDataSet_WhenCorrectData()
-        ' TODO: code test.
         ' Arrange.
+        ' TODO: add writing correct data to the file.
+        File.Create(_localDataFile).Dispose()
+        Dim dataContext As New TextFileDataContext(_localPath)
+
         ' Act.
+        dataContext.Connect()
+
         ' Assert.
-        Assert.Fail()
+        ' TODO: check on data in the data set.
     End Sub
+
+#End Region
 
 End Class
