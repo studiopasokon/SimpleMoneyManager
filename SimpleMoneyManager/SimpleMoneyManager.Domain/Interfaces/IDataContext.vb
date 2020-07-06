@@ -20,7 +20,7 @@ Option Explicit On
 Option Infer On
 Option Strict On
 
-Imports SimpleMoneyManager.Domain.Entities
+Imports System.IO
 
 Namespace Interfaces
 
@@ -34,6 +34,7 @@ Namespace Interfaces
         ''' <summary>
         ''' Connecting the data context to the actual data storage.
         ''' </summary>
+        ''' <exception cref="InvalidDataException">Thrown when a faulty header or data line is found during loading of the data.</exception>
         Sub Connect()
 
         ''' <summary>

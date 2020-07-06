@@ -65,7 +65,7 @@ Namespace DataContext
             End If
 
             _dataPath = dataPath
-            FinancialYearDataSet = New List(Of String)
+            FinancialYearDataSet = New List(Of String())
         End Sub
 
 #End Region
@@ -76,18 +76,36 @@ Namespace DataContext
         ''' Contains all loaded financial data.
         ''' </summary>
         ''' <returns>A list containing all loaded financial data.</returns>
-        Friend Property FinancialYearDataSet As List(Of String)
+        Friend Property FinancialYearDataSet As List(Of String())
 
 #End Region
 
-#Region "Procedures"
+#Region "API Procedures"
 
         ''' <inheritdoc />
         Public Sub Connect() Implements IDataContext.Connect
-            ' Check whether the data file exists in the path.
+            ' Check whether the data file exists in the path, and load if it does.
             Dim fullPath As String = Path.Combine(_dataPath, DataFileName)
             If File.Exists(fullPath) Then
-                ' TODO: open the file and load the data.
+                Dim dataFileContents = File.ReadAllLines(fullPath, Text.Encoding.UTF8)
+
+                ' Empty file must be ignored.
+                If dataFileContents.Length = 0 Then
+                    Return
+                End If
+
+                ' Check the header.
+                If Not IsCorrectDataFileHeader(dataFileContents(0)) Then
+                    Throw New InvalidDataException("Data file header doesn't have the correct format")
+                End If
+
+                ' Load the rest of the data, skipping the header.
+                For Each dataLine In dataFileContents.Skip(1)
+                    If Not LoadDataLine(dataLine) Then
+                        ' Loading and parsing of the data line failed.
+                        Throw New InvalidDataException("Faulty data was found in the data file")
+                    End If
+                Next
             End If
         End Sub
 
@@ -97,6 +115,38 @@ Namespace DataContext
 
             Throw New NotImplementedException()
         End Sub
+
+#End Region
+
+#Region "Suppport Procedures and Functions"
+
+        ''' <summary>
+        ''' Checks whether the given string is a correct header line.
+        ''' </summary>
+        ''' <param name="headerLine">The string to check.</param>
+        ''' <returns>True if <paramref name="headerLine"/> contains a real header, otherwise False is returned.</returns>
+        Private Function IsCorrectDataFileHeader(ByRef headerLine As String) As Boolean
+            If Not headerLine = "SimpleMoneyManager_v1" Then
+                Return False
+            End If
+
+            Return True
+        End Function
+
+        Private Function LoadDataLine(ByRef dataLine As String) As Boolean
+            ' Split the line according format - year#date#description#amount#transactiontype
+            Dim dataParts = dataLine.Split(New Char() {"#"c}, StringSplitOptions.RemoveEmptyEntries)
+
+            ' If there are less or more parts, we may assume the line is missing data or extra data is added.
+            If dataParts.Length <> 5 Then
+                Return False
+            End If
+
+            ' For now, no extra checking is done, this can be added later.
+            ' Just store the information in the data set.
+            FinancialYearDataSet.Add(dataParts)
+            Return True
+        End Function
 
 #End Region
 

@@ -21,6 +21,7 @@ Option Infer On
 Option Strict On
 
 Imports System.IO
+Imports System.Text
 Imports SimpleMoneyManager.Infrastructure.DataContext
 
 ''' <summary>
@@ -95,30 +96,36 @@ Imports SimpleMoneyManager.Infrastructure.DataContext
 
     <TestMethod()> Public Sub LoadDataFile_ShouldThrowException_WhenIncorrectHeader()
         ' Arrange.
-        ' TODO: add writing some faulty data to the file.
-        File.Create(_localDataFile).Dispose()
+        File.WriteAllText(_localDataFile, "faulty header", Text.Encoding.UTF8)
         Dim dataContext As New TextFileDataContext(_localPath)
 
         ' Act.
         Dim instantiate As Action = Sub() dataContext.Connect()
 
         ' Assert.
-        ' TODO: catch proper exception.
-        Assert.ThrowsException(Of Exception)(instantiate)
+        Dim assertedException = Assert.ThrowsException(Of InvalidDataException)(instantiate)
+        Assert.AreEqual("Data file header doesn't have the correct format", assertedException.Message)
     End Sub
 
-    <TestMethod()> Public Sub LoadDataFile_ShouldThrowException_WhenIncorrectTransactions()
+    <DataTestMethod()>
+    <DataRow("")>
+    <DataRow("some faulty#data line.")>
+    <DataRow("2020#10/10/2020#description#100#W#extradata")>
+    <DataRow("2020#10/10/2020#description#oneless")>
+    Public Sub LoadDataFile_ShouldThrowException_WhenIncorrectTransactions(dataLine As String)
         ' Arrange.
-        ' TODO: add writing some faulty data to the file.
-        File.Create(_localDataFile).Dispose()
+        Dim contentBuilder = New StringBuilder()
+        contentBuilder.AppendLine("SimpleMoneyManager_v1")
+        contentBuilder.AppendLine(dataLine)
+        File.WriteAllText(_localDataFile, contentBuilder.ToString(), Text.Encoding.UTF8)
         Dim dataContext As New TextFileDataContext(_localPath)
 
         ' Act.
         Dim instantiate As Action = Sub() dataContext.Connect()
 
         ' Assert.
-        ' TODO: catch proper exception.
-        Assert.ThrowsException(Of Exception)(instantiate)
+        Dim assertedException = Assert.ThrowsException(Of InvalidDataException)(instantiate)
+        Assert.AreEqual("Faulty data was found in the data file", assertedException.Message)
     End Sub
 
     <TestMethod()> Public Sub LoadDataFile_ShouldCreateDataSet_WhenCorrectData()
