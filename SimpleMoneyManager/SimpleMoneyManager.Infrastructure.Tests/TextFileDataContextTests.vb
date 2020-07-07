@@ -130,15 +130,41 @@ Imports SimpleMoneyManager.Infrastructure.DataContext
 
     <TestMethod()> Public Sub LoadDataFile_ShouldCreateDataSet_WhenCorrectData()
         ' Arrange.
-        ' TODO: add writing correct data to the file.
-        File.Create(_localDataFile).Dispose()
+        Dim contentBuilder = New StringBuilder()
+        contentBuilder.AppendLine("SimpleMoneyManager_v1")
+        contentBuilder.AppendLine("2020#10/10/2020#description#100#W")
+        File.WriteAllText(_localDataFile, contentBuilder.ToString(), Text.Encoding.UTF8)
         Dim dataContext As New TextFileDataContext(_localPath)
 
         ' Act.
         dataContext.Connect()
 
         ' Assert.
-        ' TODO: check on data in the data set.
+        Assert.IsNotNull(dataContext.FinancialYearDataSet)
+        Assert.AreEqual(1, dataContext.FinancialYearDataSet.Count)
+    End Sub
+
+#End Region
+
+#Region "Commit Tests"
+
+    <TestMethod> Public Sub SaveDataFile_ShouldUpdateFile_WhenDataIsWritten()
+        ' Arrange.
+        Dim contentBuilder = New StringBuilder()
+        contentBuilder.AppendLine("SimpleMoneyManager_v1")
+        contentBuilder.AppendLine("2020#05/05/2020#description#200#P")
+
+        Dim dataRecord = New String() {"2020", "05/05/2020", "description", "200", "P"}
+        Dim dataContext As New TextFileDataContext(_localPath)
+        dataContext.FinancialYearDataSet.Clear()
+        dataContext.FinancialYearDataSet.Add(dataRecord)
+
+        ' Act.
+        dataContext.Commit()
+
+        ' Assert.
+        Dim fileContent = File.ReadAllText(_localDataFile)
+        Assert.AreEqual(contentBuilder.ToString(), fileContent)
     End Sub
 
 #End Region
