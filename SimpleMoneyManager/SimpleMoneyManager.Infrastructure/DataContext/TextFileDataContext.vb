@@ -111,9 +111,22 @@ Namespace DataContext
 
         ''' <inheritdoc />
         Public Sub Commit() Implements IDataContext.Commit
-            ' TODO: implement backing up the old data files and saving the modified data.
+            ' TODO: implement backing up the old data files.
 
-            Throw New NotImplementedException()
+            ' Create new file.
+            Dim fullPath As String = Path.Combine(_dataPath, DataFileName)
+            Dim fileWriter = File.CreateText(fullPath)
+
+            ' Write header.
+            fileWriter.WriteLine("SimpleMoneyManager_v1")
+
+            ' Write all records
+            FinancialYearDataSet.ForEach(
+                Sub(record As String())
+                    fileWriter.WriteLine(ContructDataLine(record))
+                End Sub)
+
+            fileWriter.Close()
         End Sub
 
 #End Region
@@ -133,6 +146,11 @@ Namespace DataContext
             Return True
         End Function
 
+        ''' <summary>
+        ''' Loads a data line and splits it in the different parts.
+        ''' </summary>
+        ''' <param name="dataLine">A loaded record in string form.</param>
+        ''' <returns>A data record split up in parts.</returns>
         Private Function LoadDataLine(ByRef dataLine As String) As Boolean
             ' Split the line according format - year#date#description#amount#transactiontype
             Dim dataParts = dataLine.Split(New Char() {"#"c}, StringSplitOptions.RemoveEmptyEntries)
@@ -146,6 +164,15 @@ Namespace DataContext
             ' Just store the information in the data set.
             FinancialYearDataSet.Add(dataParts)
             Return True
+        End Function
+
+        ''' <summary>
+        ''' Constructs a single string record from a data record.
+        ''' </summary>
+        ''' <param name="dataRecord">The source data record.</param>
+        ''' <returns>A single data line.</returns>
+        Private Function ContructDataLine(ByRef dataRecord As String()) As String
+            Return $"{dataRecord(0)}#{dataRecord(1)}#{dataRecord(2)}#{dataRecord(3)}#{dataRecord(4)}"
         End Function
 
 #End Region
