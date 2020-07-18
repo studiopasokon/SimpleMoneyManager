@@ -22,19 +22,19 @@ Partial Class MainWindow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Home")
-        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("January")
-        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("February")
-        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("March")
-        Dim TreeNode5 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("April")
-        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("May")
-        Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("June")
-        Dim TreeNode8 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("July")
-        Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("August")
-        Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("September")
-        Dim TreeNode11 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("October")
-        Dim TreeNode12 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("November")
-        Dim TreeNode13 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("December")
+        Dim TreeNode14 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Home")
+        Dim TreeNode15 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("January")
+        Dim TreeNode16 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("February")
+        Dim TreeNode17 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("March")
+        Dim TreeNode18 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("April")
+        Dim TreeNode19 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("May")
+        Dim TreeNode20 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("June")
+        Dim TreeNode21 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("July")
+        Dim TreeNode22 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("August")
+        Dim TreeNode23 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("September")
+        Dim TreeNode24 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("October")
+        Dim TreeNode25 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("November")
+        Dim TreeNode26 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("December")
         Me.SplitterMainWindow = New System.Windows.Forms.SplitContainer()
         Me.MonthSelector = New System.Windows.Forms.TreeView()
         Me.MainMenu = New System.Windows.Forms.MenuStrip()
@@ -68,33 +68,33 @@ Partial Class MainWindow
         Me.MonthSelector.HideSelection = False
         Me.MonthSelector.Location = New System.Drawing.Point(0, 0)
         Me.MonthSelector.Name = "MonthSelector"
-        TreeNode1.Name = "NodeHome"
-        TreeNode1.Text = "Home"
-        TreeNode2.Name = "NodeJanuary"
-        TreeNode2.Text = "January"
-        TreeNode3.Name = "NodeFebruary"
-        TreeNode3.Text = "February"
-        TreeNode4.Name = "NodeMarch"
-        TreeNode4.Text = "March"
-        TreeNode5.Name = "NodeApril"
-        TreeNode5.Text = "April"
-        TreeNode6.Name = "NodeMay"
-        TreeNode6.Text = "May"
-        TreeNode7.Name = "NodeJune"
-        TreeNode7.Text = "June"
-        TreeNode8.Name = "NodeJuly"
-        TreeNode8.Text = "July"
-        TreeNode9.Name = "NodeAugust"
-        TreeNode9.Text = "August"
-        TreeNode10.Name = "NodeSeptember"
-        TreeNode10.Text = "September"
-        TreeNode11.Name = "NodeOctober"
-        TreeNode11.Text = "October"
-        TreeNode12.Name = "NodeNovember"
-        TreeNode12.Text = "November"
-        TreeNode13.Name = "NodeDecember"
-        TreeNode13.Text = "December"
-        Me.MonthSelector.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2, TreeNode3, TreeNode4, TreeNode5, TreeNode6, TreeNode7, TreeNode8, TreeNode9, TreeNode10, TreeNode11, TreeNode12, TreeNode13})
+        TreeNode14.Name = "NodeHome"
+        TreeNode14.Text = "Home"
+        TreeNode15.Name = "NodeJanuary"
+        TreeNode15.Text = "January"
+        TreeNode16.Name = "NodeFebruary"
+        TreeNode16.Text = "February"
+        TreeNode17.Name = "NodeMarch"
+        TreeNode17.Text = "March"
+        TreeNode18.Name = "NodeApril"
+        TreeNode18.Text = "April"
+        TreeNode19.Name = "NodeMay"
+        TreeNode19.Text = "May"
+        TreeNode20.Name = "NodeJune"
+        TreeNode20.Text = "June"
+        TreeNode21.Name = "NodeJuly"
+        TreeNode21.Text = "July"
+        TreeNode22.Name = "NodeAugust"
+        TreeNode22.Text = "August"
+        TreeNode23.Name = "NodeSeptember"
+        TreeNode23.Text = "September"
+        TreeNode24.Name = "NodeOctober"
+        TreeNode24.Text = "October"
+        TreeNode25.Name = "NodeNovember"
+        TreeNode25.Text = "November"
+        TreeNode26.Name = "NodeDecember"
+        TreeNode26.Text = "December"
+        Me.MonthSelector.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode14, TreeNode15, TreeNode16, TreeNode17, TreeNode18, TreeNode19, TreeNode20, TreeNode21, TreeNode22, TreeNode23, TreeNode24, TreeNode25, TreeNode26})
         Me.MonthSelector.Size = New System.Drawing.Size(183, 458)
         Me.MonthSelector.TabIndex = 0
         '
@@ -130,7 +130,7 @@ Partial Class MainWindow
         Me.Controls.Add(Me.MainMenu)
         Me.MainMenuStrip = Me.MainMenu
         Me.Name = "MainWindow"
-        Me.Text = "Main Window"
+        Me.Text = "Simple Money Manager"
         Me.SplitterMainWindow.Panel1.ResumeLayout(False)
         CType(Me.SplitterMainWindow, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitterMainWindow.ResumeLayout(False)
