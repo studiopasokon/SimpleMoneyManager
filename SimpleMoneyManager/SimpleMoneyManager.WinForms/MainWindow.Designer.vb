@@ -35,28 +35,35 @@ Partial Class MainWindow
         Dim TreeNode24 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("October")
         Dim TreeNode25 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("November")
         Dim TreeNode26 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("December")
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainWindow))
         Me.SplitterMainWindow = New System.Windows.Forms.SplitContainer()
         Me.MonthSelector = New System.Windows.Forms.TreeView()
         Me.MainMenu = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer()
+        Me.ButtonStrip = New System.Windows.Forms.ToolStrip()
+        Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
         CType(Me.SplitterMainWindow, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitterMainWindow.Panel1.SuspendLayout()
         Me.SplitterMainWindow.SuspendLayout()
         Me.MainMenu.SuspendLayout()
+        Me.ToolStripContainer1.TopToolStripPanel.SuspendLayout()
+        Me.ToolStripContainer1.SuspendLayout()
+        Me.ButtonStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'SplitterMainWindow
         '
-        Me.SplitterMainWindow.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitterMainWindow.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.SplitterMainWindow.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
-        Me.SplitterMainWindow.Location = New System.Drawing.Point(0, 28)
+        Me.SplitterMainWindow.Location = New System.Drawing.Point(0, 68)
         Me.SplitterMainWindow.Name = "SplitterMainWindow"
         '
         'SplitterMainWindow.Panel1
         '
         Me.SplitterMainWindow.Panel1.Controls.Add(Me.MonthSelector)
-        Me.SplitterMainWindow.Size = New System.Drawing.Size(1003, 298)
+        Me.SplitterMainWindow.Size = New System.Drawing.Size(1005, 295)
         Me.SplitterMainWindow.SplitterDistance = 183
         Me.SplitterMainWindow.TabIndex = 0
         '
@@ -95,16 +102,17 @@ Partial Class MainWindow
         TreeNode26.Name = "NodeDecember"
         TreeNode26.Text = "December"
         Me.MonthSelector.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode14, TreeNode15, TreeNode16, TreeNode17, TreeNode18, TreeNode19, TreeNode20, TreeNode21, TreeNode22, TreeNode23, TreeNode24, TreeNode25, TreeNode26})
-        Me.MonthSelector.Size = New System.Drawing.Size(183, 298)
+        Me.MonthSelector.Size = New System.Drawing.Size(183, 295)
         Me.MonthSelector.TabIndex = 0
         '
         'MainMenu
         '
+        Me.MainMenu.Dock = System.Windows.Forms.DockStyle.None
         Me.MainMenu.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MainMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
         Me.MainMenu.Location = New System.Drawing.Point(0, 0)
         Me.MainMenu.Name = "MainMenu"
-        Me.MainMenu.Size = New System.Drawing.Size(1003, 28)
+        Me.MainMenu.Size = New System.Drawing.Size(1005, 28)
         Me.MainMenu.TabIndex = 1
         Me.MainMenu.Text = "MenuStrip1"
         '
@@ -118,16 +126,56 @@ Partial Class MainWindow
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(116, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.ExitToolStripMenuItem.Text = "E&xit"
+        '
+        'ToolStripContainer1
+        '
+        Me.ToolStripContainer1.BottomToolStripPanelVisible = False
+        '
+        'ToolStripContainer1.ContentPanel
+        '
+        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(1005, 12)
+        Me.ToolStripContainer1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ToolStripContainer1.LeftToolStripPanelVisible = False
+        Me.ToolStripContainer1.Location = New System.Drawing.Point(0, 0)
+        Me.ToolStripContainer1.Name = "ToolStripContainer1"
+        Me.ToolStripContainer1.RightToolStripPanelVisible = False
+        Me.ToolStripContainer1.Size = New System.Drawing.Size(1005, 67)
+        Me.ToolStripContainer1.TabIndex = 2
+        Me.ToolStripContainer1.Text = "ToolStripContainer1"
+        '
+        'ToolStripContainer1.TopToolStripPanel
+        '
+        Me.ToolStripContainer1.TopToolStripPanel.Controls.Add(Me.MainMenu)
+        Me.ToolStripContainer1.TopToolStripPanel.Controls.Add(Me.ButtonStrip)
+        '
+        'ButtonStrip
+        '
+        Me.ButtonStrip.Dock = System.Windows.Forms.DockStyle.None
+        Me.ButtonStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ButtonStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveToolStripButton})
+        Me.ButtonStrip.Location = New System.Drawing.Point(5, 28)
+        Me.ButtonStrip.Name = "ButtonStrip"
+        Me.ButtonStrip.Size = New System.Drawing.Size(42, 27)
+        Me.ButtonStrip.TabIndex = 2
+        '
+        'SaveToolStripButton
+        '
+        Me.SaveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.SaveToolStripButton.Image = CType(resources.GetObject("SaveToolStripButton.Image"), System.Drawing.Image)
+        Me.SaveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.SaveToolStripButton.Name = "SaveToolStripButton"
+        Me.SaveToolStripButton.Size = New System.Drawing.Size(29, 24)
+        Me.SaveToolStripButton.Text = "&Save"
         '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1003, 326)
+        Me.ClientSize = New System.Drawing.Size(1005, 363)
+        Me.Controls.Add(Me.ToolStripContainer1)
         Me.Controls.Add(Me.SplitterMainWindow)
-        Me.Controls.Add(Me.MainMenu)
         Me.MainMenuStrip = Me.MainMenu
         Me.Name = "MainWindow"
         Me.Text = "Simple Money Manager"
@@ -136,8 +184,13 @@ Partial Class MainWindow
         Me.SplitterMainWindow.ResumeLayout(False)
         Me.MainMenu.ResumeLayout(False)
         Me.MainMenu.PerformLayout()
+        Me.ToolStripContainer1.TopToolStripPanel.ResumeLayout(False)
+        Me.ToolStripContainer1.TopToolStripPanel.PerformLayout()
+        Me.ToolStripContainer1.ResumeLayout(False)
+        Me.ToolStripContainer1.PerformLayout()
+        Me.ButtonStrip.ResumeLayout(False)
+        Me.ButtonStrip.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -146,4 +199,7 @@ Partial Class MainWindow
     Friend WithEvents MainMenu As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripContainer1 As ToolStripContainer
+    Friend WithEvents ButtonStrip As ToolStrip
+    Friend WithEvents SaveToolStripButton As ToolStripButton
 End Class
