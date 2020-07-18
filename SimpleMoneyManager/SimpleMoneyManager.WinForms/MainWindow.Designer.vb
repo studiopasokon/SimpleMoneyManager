@@ -56,7 +56,7 @@ Partial Class MainWindow
         'SplitterMainWindow.Panel1
         '
         Me.SplitterMainWindow.Panel1.Controls.Add(Me.MonthSelector)
-        Me.SplitterMainWindow.Size = New System.Drawing.Size(800, 458)
+        Me.SplitterMainWindow.Size = New System.Drawing.Size(1003, 458)
         Me.SplitterMainWindow.SplitterDistance = 183
         Me.SplitterMainWindow.TabIndex = 0
         '
@@ -68,31 +68,31 @@ Partial Class MainWindow
         Me.MonthSelector.HideSelection = False
         Me.MonthSelector.Location = New System.Drawing.Point(0, 0)
         Me.MonthSelector.Name = "MonthSelector"
-        TreeNode1.Name = "Node0"
+        TreeNode1.Name = "NodeHome"
         TreeNode1.Text = "Home"
-        TreeNode2.Name = "Node1"
+        TreeNode2.Name = "NodeJanuary"
         TreeNode2.Text = "January"
-        TreeNode3.Name = "Node2"
+        TreeNode3.Name = "NodeFebruary"
         TreeNode3.Text = "February"
-        TreeNode4.Name = "Node3"
+        TreeNode4.Name = "NodeMarch"
         TreeNode4.Text = "March"
-        TreeNode5.Name = "Node4"
+        TreeNode5.Name = "NodeApril"
         TreeNode5.Text = "April"
-        TreeNode6.Name = "Node5"
+        TreeNode6.Name = "NodeMay"
         TreeNode6.Text = "May"
-        TreeNode7.Name = "Node6"
+        TreeNode7.Name = "NodeJune"
         TreeNode7.Text = "June"
-        TreeNode8.Name = "Node7"
+        TreeNode8.Name = "NodeJuly"
         TreeNode8.Text = "July"
-        TreeNode9.Name = "Node8"
+        TreeNode9.Name = "NodeAugust"
         TreeNode9.Text = "August"
-        TreeNode10.Name = "Node9"
+        TreeNode10.Name = "NodeSeptember"
         TreeNode10.Text = "September"
-        TreeNode11.Name = "Node10"
+        TreeNode11.Name = "NodeOctober"
         TreeNode11.Text = "October"
-        TreeNode12.Name = "Node11"
+        TreeNode12.Name = "NodeNovember"
         TreeNode12.Text = "November"
-        TreeNode13.Name = "Node12"
+        TreeNode13.Name = "NodeDecember"
         TreeNode13.Text = "December"
         Me.MonthSelector.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2, TreeNode3, TreeNode4, TreeNode5, TreeNode6, TreeNode7, TreeNode8, TreeNode9, TreeNode10, TreeNode11, TreeNode12, TreeNode13})
         Me.MonthSelector.Size = New System.Drawing.Size(183, 458)
@@ -104,7 +104,7 @@ Partial Class MainWindow
         Me.MainMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
         Me.MainMenu.Location = New System.Drawing.Point(0, 0)
         Me.MainMenu.Name = "MainMenu"
-        Me.MainMenu.Size = New System.Drawing.Size(800, 28)
+        Me.MainMenu.Size = New System.Drawing.Size(1003, 28)
         Me.MainMenu.TabIndex = 1
         Me.MainMenu.Text = "MenuStrip1"
         '
@@ -118,14 +118,14 @@ Partial Class MainWindow
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(116, 26)
         Me.ExitToolStripMenuItem.Text = "E&xit"
         '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 486)
+        Me.ClientSize = New System.Drawing.Size(1003, 486)
         Me.Controls.Add(Me.SplitterMainWindow)
         Me.Controls.Add(Me.MainMenu)
         Me.MainMenuStrip = Me.MainMenu

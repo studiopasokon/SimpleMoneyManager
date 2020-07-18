@@ -80,6 +80,12 @@
       <DependentUpon>MainWindow.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MonthListControl.Designer.vb">
+      <DependentUpon>MonthListControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MonthListControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -95,10 +101,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="GeneralInfoControl.Designer.vb">
+      <DependentUpon>GeneralInfoControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralInfoControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GeneralInfoControl.resx">
+      <DependentUpon>GeneralInfoControl.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthListControl.resx">
+      <DependentUpon>MonthListControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

@@ -20,9 +20,46 @@ Option Explicit On
 Option Infer On
 Option Strict On
 
+''' <summary>
+''' Main application window.
+''' </summary>
 Public Class MainWindow
 
-    ' TODO: finalise navigation to the left panel.
-    ' TODO: add entry forms to the right panel.
+    Private generalInfo As GeneralInfoControl
+
+    ''' <summary>
+    ''' Handler closing the application.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Application.Exit()
+    End Sub
+
+    ''' <summary>
+    ''' Change the input control for the proper month.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub MonthSelector_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles MonthSelector.AfterSelect
+        SplitterMainWindow.Panel2.Controls.Clear()
+        SplitterMainWindow.Panel2.Controls.Add(CType(e.Node.Tag, Control))
+    End Sub
+
+    ''' <summary>
+    ''' Prepare all input controls for each month.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub MainWindow_Load(sender As Object, e As EventArgs) Handles Me.Load
+        ' Setup the main information panel.
+        MonthSelector.Nodes(0).Tag = New GeneralInfoControl()
+
+        ' Prepare the panels for each month.
+        For i As Integer = 1 To 12
+            Dim selectedNode = MonthSelector.Nodes(i)
+            selectedNode.Tag = New MonthListControl(selectedNode.Text)
+        Next
+    End Sub
 
 End Class
