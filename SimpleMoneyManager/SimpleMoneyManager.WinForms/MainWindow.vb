@@ -25,8 +25,6 @@ Option Strict On
 ''' </summary>
 Public Class MainWindow
 
-    Private generalInfo As GeneralInfoControl
-
     ''' <summary>
     ''' Handler closing the application.
     ''' </summary>
