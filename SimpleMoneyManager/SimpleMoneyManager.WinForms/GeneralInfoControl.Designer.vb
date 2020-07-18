@@ -111,6 +111,7 @@ Partial Class GeneralInfoControl
         Me.SelectedYear.Location = New System.Drawing.Point(148, 7)
         Me.SelectedYear.Name = "SelectedYear"
         Me.SelectedYear.Size = New System.Drawing.Size(167, 24)
+        Me.SelectedYear.Sorted = True
         Me.SelectedYear.TabIndex = 7
         '
         'AddNewYearButton
