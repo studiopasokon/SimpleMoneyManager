@@ -22,9 +22,9 @@ Partial Class MonthListControl
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.MonthNameLabel = New System.Windows.Forms.Label()
         Me.TransactionDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -50,7 +50,7 @@ Partial Class MonthListControl
         '
         'MonthNameLabel
         '
-        Me.MonthNameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MonthNameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MonthNameLabel.Location = New System.Drawing.Point(3, 0)
         Me.MonthNameLabel.Name = "MonthNameLabel"
         Me.MonthNameLabel.Size = New System.Drawing.Size(307, 31)
@@ -59,8 +59,8 @@ Partial Class MonthListControl
         '
         'TransactionDate
         '
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TransactionDate.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TransactionDate.DefaultCellStyle = DataGridViewCellStyle1
         Me.TransactionDate.HeaderText = "Date"
         Me.TransactionDate.MinimumWidth = 6
         Me.TransactionDate.Name = "TransactionDate"
@@ -69,8 +69,8 @@ Partial Class MonthListControl
         '
         'TransactionDescription
         '
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.TransactionDescription.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
+        Me.TransactionDescription.DefaultCellStyle = DataGridViewCellStyle2
         Me.TransactionDescription.HeaderText = "Description"
         Me.TransactionDescription.MinimumWidth = 6
         Me.TransactionDescription.Name = "TransactionDescription"
@@ -79,8 +79,8 @@ Partial Class MonthListControl
         '
         'TransactionAmount
         '
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.TransactionAmount.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
+        Me.TransactionAmount.DefaultCellStyle = DataGridViewCellStyle3
         Me.TransactionAmount.HeaderText = "Amount"
         Me.TransactionAmount.MinimumWidth = 6
         Me.TransactionAmount.Name = "TransactionAmount"

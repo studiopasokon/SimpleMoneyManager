@@ -56,7 +56,7 @@ Partial Class MainWindow
         'SplitterMainWindow.Panel1
         '
         Me.SplitterMainWindow.Panel1.Controls.Add(Me.MonthSelector)
-        Me.SplitterMainWindow.Size = New System.Drawing.Size(1003, 458)
+        Me.SplitterMainWindow.Size = New System.Drawing.Size(1003, 298)
         Me.SplitterMainWindow.SplitterDistance = 183
         Me.SplitterMainWindow.TabIndex = 0
         '
@@ -64,7 +64,7 @@ Partial Class MainWindow
         '
         Me.MonthSelector.BackColor = System.Drawing.SystemColors.Highlight
         Me.MonthSelector.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MonthSelector.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MonthSelector.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MonthSelector.HideSelection = False
         Me.MonthSelector.Location = New System.Drawing.Point(0, 0)
         Me.MonthSelector.Name = "MonthSelector"
@@ -95,7 +95,7 @@ Partial Class MainWindow
         TreeNode26.Name = "NodeDecember"
         TreeNode26.Text = "December"
         Me.MonthSelector.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode14, TreeNode15, TreeNode16, TreeNode17, TreeNode18, TreeNode19, TreeNode20, TreeNode21, TreeNode22, TreeNode23, TreeNode24, TreeNode25, TreeNode26})
-        Me.MonthSelector.Size = New System.Drawing.Size(183, 458)
+        Me.MonthSelector.Size = New System.Drawing.Size(183, 298)
         Me.MonthSelector.TabIndex = 0
         '
         'MainMenu
@@ -125,7 +125,7 @@ Partial Class MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1003, 486)
+        Me.ClientSize = New System.Drawing.Size(1003, 326)
         Me.Controls.Add(Me.SplitterMainWindow)
         Me.Controls.Add(Me.MainMenu)
         Me.MainMenuStrip = Me.MainMenu
