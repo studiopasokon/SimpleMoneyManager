@@ -39,9 +39,9 @@ Install instructions will be added here when the application development is prog
 All needed features are still in development.
 
 To-do list:
-* Loading and saving transaction information to disk.
 * Listing all money transactions by month.
 * Adding, editing and removing transactions.
+* Recode the UI using the MVC pattern.
 
 ## Status
 Project is: _in progress_.
