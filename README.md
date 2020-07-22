@@ -1,13 +1,15 @@
 # SimpleMoneyManager
 A very simple and basic money manager to track spending.
 
+## Status
+Project is: _stalled / abandoned_. Right now all development and coding activities are stopped as there is no more immediate need for this application. I'm not sure whether I'll pick up the project later again.
+
 ## Table of contents
 * [General info](#general-info)
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Features](#features)
-* [Status](#status)
 * [Inspiration](#inspiration)
 
 ## General info
@@ -42,6 +44,3 @@ To-do list:
 * Listing all money transactions by month.
 * Adding, editing and removing transactions.
 * Recode the UI using the MVC pattern.
-
-## Status
-Project is: _in progress_.
